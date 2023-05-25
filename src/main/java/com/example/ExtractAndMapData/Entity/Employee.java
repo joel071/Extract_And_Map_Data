@@ -49,9 +49,9 @@ public class Employee {
         this.emailId = emailId;
     }
 
-    public String getDepartment() {
-        return department;
-    }
+    //public String getDepartment() {
+        //return department;
+    //}
 
     //public void setDepartment(String department) {
         //this.department = department;
