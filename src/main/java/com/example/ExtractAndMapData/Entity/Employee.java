@@ -14,10 +14,12 @@ public class Employee {
     private String lastName;
     private  String emailId;
     private String department;
+    private String tt;
 
     public String getEmployeeId() {
         return employeeId;
     }
+    
 
     public void setEmployeeId(String employeeId) {
         this.employeeId = employeeId;
@@ -51,7 +53,8 @@ public class Employee {
         return department;
     }
 
-    public void setDepartment(String department) {
-        this.department = department;
-    }
+    //public void setDepartment(String department) {
+        //this.department = department;
+    //}
+   
 }
