@@ -4,6 +4,7 @@ import com.example.ExtractAndMapData.Entity.Employee;
 import com.example.ExtractAndMapData.Repository.EmployeeRepository;
 
 
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.storage.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -56,8 +57,15 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     public void main() throws IOException {
-        String bucketName = "bucketjoe1234joejoe";
-        Storage storage = StorageOptions.getDefaultInstance().getService();
+        String bucketName = "test123bucket123";
+
+        //String credentialsFilePath = "C:/Users/lahce/Downloads/credentials/playground-s-11-52550b99-44798161a220.json";
+
+        // Load the private key JSON file as a credential
+        //GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream(credentialsFilePath));
+        GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream("C:/Users/lahce/Downloads/credentials/playground-s-11-52550b99-44798161a220.json"));
+        Storage storage = StorageOptions.newBuilder().setCredentials(credentials).build().getService();
+        //Storage storage = StorageOptions.getDefaultInstance().getService();
         //Bucket bucket = storage.create(BucketInfo.of("baeldung-bucket"));
         Bucket bucket = storage.get(bucketName);
         String fileName = "output.csv";
