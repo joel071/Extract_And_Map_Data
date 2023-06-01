@@ -9,12 +9,14 @@ import javax.persistence.Table;
 public class Employee {
 
     @Id
-    private String employeeId;
-    private String firstName;
+    public String employeeId;
+    public String firstName;
     private String lastName;
     private  String emailId;
+    private String jou;
     private String department;
     private String tt;
+    
 
     public String getEmployeeId() {
         return employeeId;
