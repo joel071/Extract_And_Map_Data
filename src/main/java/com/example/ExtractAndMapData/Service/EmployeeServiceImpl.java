@@ -56,15 +56,17 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    public void main() throws IOException {
+    public void mainls() throws IOException {
         String bucketName = "test123bucket123";
 
         //String credentialsFilePath = "C:/Users/lahce/Downloads/credentials/playground-s-11-52550b99-44798161a220.json";
 
-        // Load the private key JSON file as a credential
+        
         //GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream(credentialsFilePath));
+
         GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream("C:/Users/lahce/Downloads/credentials/playground-s-11-52550b99-44798161a220.json"));
         Storage st = StorageOptions.newBuilder().setCredentials(credentials).build().getService();
+
         //Storage storage = StorageOptions.getDefaultInstance().getService();
         //Bucket bucket = storage.create(BucketInfo.of("baeldung-bucket"));
         Bucket bucket = storage.get(bucketName);

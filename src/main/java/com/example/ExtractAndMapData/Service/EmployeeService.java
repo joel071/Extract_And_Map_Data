@@ -6,5 +6,5 @@ public interface EmployeeService {
 
     public void exportToCSV() throws IOException;
 
-    public void main() throws IOException;
+    public void mainls() throws IOException;
 }
