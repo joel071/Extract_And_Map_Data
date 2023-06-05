@@ -70,10 +70,10 @@ public class EmployeeServiceImpl implements EmployeeService{
         //Storage storage = StorageOptions.getDefaultInstance().getService();
         //Bucket bucket = storage.create(BucketInfo.of("baeldung-bucket"));
         Bucket bucket = storage.get(bucketName);
-        String fileName = "output.csv";
-        BlobId blobId = BlobId.of(bucket.getName(), fileName);
+        String file = "output.csv";
+        BlobId blobId = BlobId.of(bucket.getName(), file);
         BlobInfo blobInfo = BlobInfo.newBuilder(blobId).build();
-        Blob blob = storage.create(blobInfo, Files.readAllBytes(Paths.get(fileName)));
+        Blob blob = storage.create(blobInfo, Files.readAllBytes(Paths.get(file)));
     }
 
 
