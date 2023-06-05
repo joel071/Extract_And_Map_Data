@@ -16,6 +16,7 @@ public class Employee {
     private String jou;
     private String department;
     private String tt;
+    private String tous;
 
 
     public String getEmployeeId() {
