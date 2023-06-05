@@ -61,9 +61,9 @@ public class EmployeeServiceImpl implements EmployeeService{
 
         //String credentialsFilePath = "C:/Users/lahce/Downloads/credentials/playground-s-11-52550b99-44798161a220.json";
 
-        // Load the private key JSON file as a credential
+        
         //GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream(credentialsFilePath));
-        GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream("C:/Users/lahce/Downloads/credentials/playground-s-11-52550b99-44798161a220.json"));
+        GoogleCredentials credential = GoogleCredentials.fromStream(new FileInputStream("C:/Users/lahce/Downloads/credentials/playground-s-11-52550b99-44798161a220.json"));
         Storage storage = StorageOptions.newBuilder().setCredentials(credentials).build().getService();
         //Storage storage = StorageOptions.getDefaultInstance().getService();
         //Bucket bucket = storage.create(BucketInfo.of("baeldung-bucket"));
